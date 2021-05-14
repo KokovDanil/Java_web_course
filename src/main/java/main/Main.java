@@ -8,10 +8,7 @@ import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
 import resources.ResourceService;
 import resources.ResourceServiceMBean;
-import servlets.AccountServlet;
-import servlets.ResourceServlet;
-import servlets.SignInServlet;
-import servlets.SignUpServlet;
+import servlets.*;
 import servlets.chat.WebSocketChatServlet;
 
 import javax.management.MBeanServer;
@@ -62,7 +59,7 @@ public class Main {
         context.addServlet(new ServletHolder(accountServlet), "/admin");
         context.addServlet(new ServletHolder(signUpServlet), "/signup");
         context.addServlet(new ServletHolder(signInServlet), "/signin");
-        context.addServlet(new ServletHolder(new WebSocketChatServlet()), "/chat");
+//        context.addServlet(new ServletHolder(new WebSocketChatServlet()), "/chat");
         context.addServlet(new ServletHolder(resourceServlet), "/resources");
 
         Server server = new Server(8080);
