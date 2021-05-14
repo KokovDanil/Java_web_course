@@ -31,6 +31,7 @@ public class ResourceServlet extends HttpServlet {
         TestResource resource = (TestResource) ReadXMLFileSAX.readXML(path);
         resourceService.setResource(resource);
 
+        resp.getWriter().println("path: " + req.getParameter("path"));
         resp.setStatus(HttpServletResponse.SC_OK);
     }
 }
